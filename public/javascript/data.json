@@ -1,0 +1,80 @@
+{
+    "item1": {
+        "name": "Almond Toe Court Shoes - Patent Black",
+        "category": "Womens footwear",
+        "price": 99,
+        "quantity": 5
+    },
+    "item2": {
+        "name": "Suede Shoes - Blue",
+        "category": "Womens footwear",
+        "price": 42,
+        "quantity": 4
+    },
+    "item3": {
+        "name": "Leather Driver Saddle Loafers - Tan",
+        "category": "Mens footwear",
+        "price": 34,
+        "quantity": 12
+    },
+    "item4": {
+        "name": "Flip Flops - Red",
+        "category": "Mens footwear",
+        "price": 19,
+        "quantity": 6
+    },
+    "item5": {
+        "name": "Flip Flops - Blue",
+        "category": "Mens footwear",
+        "price": 19,
+        "quantity": 0
+    },
+    "item6": {
+        "name": "Gold Button Cardigan - Black",
+        "category": "Womens casualwear",
+        "price": 167,
+        "quantity": 6
+    },
+    "item7": {
+        "name": "Cotton Shorts - Medium Red",
+        "category": "Womens casualwear",
+        "price": 30,
+        "quantity": 5
+    },
+    "item8": {
+        "name": "Fine Stripe Short Sleeve Shirt - Grey",
+        "category": "Mens casualwear",
+        "price": 49.99,
+        "quantity": 9
+    },
+    "item9": {
+        "name": "Fine Stripe Short Sleeve Shirt - Green",
+        "category": "Mens casualwear",
+        "price": 39.99,
+        "quantity": 3
+    },
+    "item10": {
+        "name": "Sharkskin Waistcoat - Charcoal",
+        "category": "Mens formalwear",
+        "price": 75,
+        "quantity": 2
+    },
+    "item11": {
+        "name": "Lightweight Patch Pocket Blazer - Deer",
+        "category": "Mens formalwear",
+        "price": 175,
+        "quantity": 1
+    },
+    "item12": {
+        "name": "Bird Print Dress - Black",
+        "category": "Womens formalwear",
+        "price": 270,
+        "quantity": 10
+    },
+    "item13": {
+        "name": "Mid Twist Cut-Out Dress - Pink",
+        "category": "Womens formalwear",
+        "price": 540,
+        "quantity": 5
+    }
+}
