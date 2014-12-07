@@ -13,7 +13,7 @@ h1 {
   background-color: #29A3A3;
 }
 
-#title p {
+#cart-text {
   color: #fff;
   font-size: 1.25em;
   float: right;
@@ -44,6 +44,7 @@ h3 {
 
 .modal-footer p {
   padding-left: 20%;
+  color: #000;
 }
 
 @media (max-width: 600px) {

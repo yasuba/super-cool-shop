@@ -3,78 +3,91 @@
         "name": "Almond Toe Court Shoes - Patent Black",
         "category": "Womens footwear",
         "price": 99,
-        "quantity": 5
+        "quantity": 5,
+        "image_url":"/images/black-shoes.jpg"
     },
     "item2": {
         "name": "Suede Shoes - Blue",
         "category": "Womens footwear",
         "price": 42,
-        "quantity": 4
+        "quantity": 4,
+        "image_url":"/images/blue-shoes.jpg"
     },
     "item3": {
         "name": "Leather Driver Saddle Loafers - Tan",
         "category": "Mens footwear",
         "price": 34,
-        "quantity": 12
+        "quantity": 12,
+        "image_url":"/images/brown-shoes.jpg"
     },
     "item4": {
         "name": "Flip Flops - Red",
         "category": "Mens footwear",
         "price": 19,
-        "quantity": 6
+        "quantity": 6,
+        "image_url":"/images/red-flip.jpg"
     },
     "item5": {
         "name": "Flip Flops - Blue",
         "category": "Mens footwear",
         "price": 19,
-        "quantity": 0
+        "quantity": 0,
+        "image_url":"/images/blue-flip.jpg"
     },
     "item6": {
         "name": "Gold Button Cardigan - Black",
         "category": "Womens casualwear",
         "price": 167,
-        "quantity": 6
+        "quantity": 6,
+        "image_url":"/images/cardigan.jpg"
     },
     "item7": {
         "name": "Cotton Shorts - Medium Red",
         "category": "Womens casualwear",
         "price": 30,
-        "quantity": 5
+        "quantity": 5,
+        "image_url":"/images/shorts.jpg"
     },
     "item8": {
         "name": "Fine Stripe Short Sleeve Shirt - Grey",
         "category": "Mens casualwear",
         "price": 49.99,
-        "quantity": 9
+        "quantity": 9,
+        "image_url":"/images/grey-shirt.jpg"
     },
     "item9": {
         "name": "Fine Stripe Short Sleeve Shirt - Green",
         "category": "Mens casualwear",
         "price": 39.99,
-        "quantity": 3
+        "quantity": 3,
+        "image_url":"/images/green-shirt.jpg"
     },
     "item10": {
         "name": "Sharkskin Waistcoat - Charcoal",
         "category": "Mens formalwear",
         "price": 75,
-        "quantity": 2
+        "quantity": 2,
+        "image_url":"/images/waistcoat.jpg"
     },
     "item11": {
         "name": "Lightweight Patch Pocket Blazer - Deer",
         "category": "Mens formalwear",
         "price": 175,
-        "quantity": 1
+        "quantity": 1,
+        "image_url":"/images/blazer.jpg"
     },
     "item12": {
         "name": "Bird Print Dress - Black",
         "category": "Womens formalwear",
         "price": 270,
-        "quantity": 10
+        "quantity": 10,
+        "image_url":"/images/bird-dress.jpg"
     },
     "item13": {
         "name": "Mid Twist Cut-Out Dress - Pink",
         "category": "Womens formalwear",
         "price": 540,
-        "quantity": 5
+        "quantity": 5,
+        "image_url":"/images/pink-dress.jpg"
     }
 }
