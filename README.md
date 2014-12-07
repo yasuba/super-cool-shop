@@ -8,11 +8,13 @@ An item cannot be added if it is out of stock.
 
 ###Technologies
 
-*Javascript
-*jQuery
-*Node.js
-*Express
-*Jasmine for testing
+* Javascript
+* jQuery
+* JSON
+* Node.js
+* Express
+* Bootstrap
+* Jasmine for testing
 
 ###Run the app
 
