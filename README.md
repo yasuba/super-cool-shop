@@ -20,6 +20,14 @@ I stored the product data with JSON rather than hardcoding it into the HTML. I u
 
 I used Bootstrap to help me style my views, but had to add in a little extra styling (in the main.css file). In here I've included a media query for viewports smaller than 600px wide. This was to prevent my header getting squashed on smaller devices.
 
+###File structure
+
+The Node server is in the server.js file at the top of the tree. Javascript functions can be found in the public/javascript folder - these consist of the ShoppingCart.js, the Voucher.js and an interface.js.
+
+My HTML is in the views folder and is separated into the index.ejs and two partials - the header and main. 
+
+The CSS is in the public/css folder.
+
 ###Run the app
 
 To see the store, first you need to install Node.js. Next, clone this repository, cd into it then run npm install.
@@ -37,11 +45,3 @@ Then point your browser to localhost:8001
 ###Run the tests
 
     open SpecRunner.html
-
-###File structure
-
-The Node server is in the server.js file at the top of the tree. Javascript functions can be found in the public/javascript folder - these consist of the ShoppingCart.js, the Voucher.js and an interface.js.
-
-My HTML is in the views folder and is separated into the index.ejs and two partials - the header and main. 
-
-The CSS is in the public/css folder.
