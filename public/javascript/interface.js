@@ -29,12 +29,13 @@ $.getJSON('./javascript/data.json', function(data){
   });
 
   $('#checkout').on('click', function(){
+    $('.balance').html(cart.balance());
     var shopping = []
     for(i=0; i<cart.contents.length;i++){shopping.push(cart.contents[i])};
     shopping.forEach(function(product) {
       $('ul').append('<li>' + product.name + " Price: £" + product.price)
     });
-    $('.total-price').html(cart.balance())
+    $('.total-price').html(cart.balance());
   });
 
   $('.voucher').on('click', function(event){

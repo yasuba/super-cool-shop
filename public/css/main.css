@@ -42,9 +42,29 @@ h3 {
   padding: 8%;
 }
 
+.modal-header {
+  border-bottom: 1px solid #B2E0B2;
+}
+
+.modal-header, .modal-body {
+  background-color: #FFFFE7;
+}
+
+.modal-body {
+  padding: 15px 15px 30px;
+}
+
+.modal-body p {
+  float: right;
+}
+
+.modal-footer {
+  background-color: #B2E0B2;
+}
+
 .modal-footer p {
   padding-left: 20%;
-  color: #000;
+  color: #5cb85c;
 }
 
 @media (max-width: 600px) {
