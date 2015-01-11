@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Shopping Cart</title>
-    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="./css/main.css">
+    <% include head.ejs %>
   </head>
 
   <body class="container-fluid">
+
   <header>
     <% include header.ejs %>
+    <form id="checkout" method="post" action="/checkout">
+      <p id="cart-text">My Cart: <span id="item-count">0</span> items &pound;<input id="price" name="balance" value="0.00"></p>
+      <input type="hidden" id="itemName" value="" name="itemName">
+      <input type="hidden" id="itemPrice" value="itemPrice" name="itemPrice">
+      <button class="btn btn-primary btn-s" id="checkoutButton">Checkout</button>
+      </form>
+    </section>
   </header>
 
   <main>
-  <% include main.ejs %>
+
+    <div class="error"></div>
+    <% result.forEach(function(item) { %>
+    <section  data-name="<%= item[0] %>" class="col-xs-6 col-md-4 item">
+  <h3><%= item[1].name %></h3><img src="<%= item[1].image_url %>">
+  <p>Price: £<%= item[1].price %></p>
+  </form>
+  <form class="buying">
+    <button class="add btn btn-primary">Add</button>
+    <button class="remove btn btn-primary">Remove</button>
+  </form>
+</section>
+<% }); %>
+
   </main>
 
-  <script src="./javascript/jquery-2.1.1.min copy.js"></script>
-  <script src="./javascript/bootstrap.min.js"></script>
-  <script src="./javascript/data.json"></script>
-  <script src="./javascript/ShoppingCart.js"></script>
-  <script src="./javascript/Voucher.js"></script>
-  <script src="./javascript/interface.js"></script>
+  <% include footer.ejs %>
 
   </body>
 
 </html>
+
+
+
+

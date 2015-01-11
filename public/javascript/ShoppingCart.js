@@ -52,7 +52,6 @@ ShoppingCart.prototype.balance = function(){
   var price = 0;
   for(i=0; i< this.contents.length; i++){
     price += this.contents[i].price
-    m = this.contents
   }
   return price;
 };
@@ -77,4 +76,3 @@ ShoppingCart.prototype.categories = function(){
   }
   return categories;
 };
-

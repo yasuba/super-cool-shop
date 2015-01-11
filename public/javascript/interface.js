@@ -5,19 +5,28 @@ var tenner = new Voucher('voucher', 'tenner', -10.00);
 var fifteen = new Voucher('voucher', 'fifteen', -15.00);
 
 function currencyFormat (num) {
-    return "£" + num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1")
+    return num.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, "$1")
 }
 
-$.getJSON('./javascript/data.json', function(data){
-  stock = data;
+$.get('/javascript/data.json', function(data){
+  var stock = data;
 
   $('.item .add').on('click', function(event){
     event.preventDefault();
     item = this.parentNode.parentNode.getAttribute('data-name');
-    try {cart.add(stock[item]);}
-    catch(err) {alert(err)}
+    try {
+      cart.add(stock[item]);
+    }
+    catch(err) {
+      $('.error').show().delay(3000).queue(function(n) {
+        $(this).hide(); n();
+      });
+      $('.error').html(err);
+    }
     $('#item-count').html(cart.contents.length);
-    $('#price').html(currencyFormat(cart.balance()))
+    $('#price').val(currencyFormat(cart.balance()));
+    var input = $('#itemName');
+    input.val( input.val() + ',' + stock[item].name );;
   });
 
   $('.item .remove').on('click', function(event){
@@ -25,25 +34,24 @@ $.getJSON('./javascript/data.json', function(data){
     var item = stock[this.parentNode.parentNode.getAttribute('data-name')];
     cart.remove(item);
     $('#item-count').html(cart.contents.length);
-    $('#price').html(currencyFormat(cart.balance()));
-  });
-
-  $('#checkout').on('click', function(){
-    $('.balance').html(cart.balance());
-    var shopping = []
-    for(i=0; i<cart.contents.length;i++){shopping.push(cart.contents[i])};
-    shopping.forEach(function(product) {
-      $('ul').append('<li>' + product.name + " Price: £" + product.price)
-    });
-    $('.total-price').html(cart.balance());
+    $('#price').val(currencyFormat(cart.balance()));
+    var input = $('#itemName');
+    input.val(input.val().replace(item.name, 'removed'));
   });
 
   $('.voucher').on('click', function(event){
+    var fullCart = JSON.parse($.cookie('cart'));
+    fullCart.forEach(function(cartItem){
+      cart.contents.push(cartItem);
+    });
     event.preventDefault();
     try {cart.add(eval(this.getAttribute("data-name")));
     }
     catch(err) {
-      alert(err);
+      $('.error').show().delay(3000).queue(function(n) {
+        $(this).hide(); n();
+      });
+      $('.error').html(err);
     }
     $('.total-price').text(cart.balance())
   });
@@ -52,4 +60,12 @@ $.getJSON('./javascript/data.json', function(data){
     $('ul').empty();
   })
 
+  $('#checkoutButton').on('click', function(event){
+    var contents = JSON.stringify(cart.contents);
+    var date = new Date();
+    date.setTime(date.getTime() + (30 * 1000));
+    $.cookie('cart', contents, {expires: date});
+  });
+
 });
+

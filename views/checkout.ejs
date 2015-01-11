@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include head.ejs %>
+  </head>
+
+  <body class="container-fluid">
+
+  <header>
+    <% include header.ejs %>
+    </section>
+  </header>
+
+  <main>
+    <div class="error"></div>
+    <h4 class="modal-title" id="myModalLabel">Checkout</h4>
+
+    <div class="modal-body">
+
+      <ul>
+      </ul>
+      <p>Balance: £<span class="balance"><%= balance %></span></p>
+    </div>
+
+    <div class="modal-footer">
+    <form>
+      <button data-name="fiver" class="voucher btn btn-success btn-xs">Add £5 discount</button>
+      <button data-name="tenner" class="voucher btn btn-success btn-xs">Add £10 discount</button>
+      <button data-name="fifteen" class="voucher btn btn-success btn-xs">Add £15 discount</button>
+      <p>Total Price: £<span class="total-price">0.00</span></p>
+    </form>
+    </div>
+
+  </main>
+
+  <% include footer.ejs %>
+
+<script>
+  $(document).ready(function(){
+    var products = JSON.parse($.cookie('cart'));
+    products.forEach(function(product){
+      $('ul').append('<li>' + product.name + ' Price: £' + product.price + '.00' + '</li>');
+    });
+  });
+</script>
+
+  </body>
+
+</html>
