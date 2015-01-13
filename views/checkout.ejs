@@ -9,40 +9,60 @@
   <header>
     <% include header.ejs %>
     </section>
+    <h2 id="checkoutTitle">Shopping Bag</h2>
   </header>
 
-  <main>
-    <div class="error"></div>
-    <h4 class="modal-title" id="myModalLabel">Checkout</h4>
+  <div class="error"></div>
 
-    <div class="modal-body">
+  <section class="col-md-6 purchaseAndPricing">
+    <h2>Your purchases</h2>
+    <ul>
+    </ul>
+  </section>
 
-      <ul>
-      </ul>
+  <section class="col-md-6 purchaseAndPricing">
+  <h4>Special offers</h4>
+    <aside>
+      <ol id="specialOffers">
+      <li>If your order comes to more than £10, you can redeem £5 off your order.</li>
+      <li>For orders of more than £50, you will receive a £10 discount.</li>
+      <li>A £15 discount is available for orders over £75 that contain an item of footwear.</li>
+      </ol>
+
+      <form id="vouchers">
+      <% if(balance >= 10.00 && balance < 50.00) { %>
+        <button data-name="fiver" class="voucher btn btn-success btn-lg">Add £5 discount</button>
+      <% } %>
+      <% if(balance >= 50.00 && categories.indexOf('footwear') < 0) { %>
+        <button data-name="tenner" class="voucher btn btn-success btn-lg">Add £10 discount</button>
+        <% } else if(balance >= 50.00 && balance < 75.00) { %>
+          <button data-name="tenner" class="voucher btn btn-success btn-lg">Add £10 discount</button>
+        <% } %>
+      <% if(balance >= 75.00 && categories.indexOf('footwear') > 0) { %>
+        <button data-name="fifteen" class="voucher btn btn-success btn-lg">Add £15 discount</button>
+      <% } %>
+      </form>
+
       <p>Balance: £<span class="balance"><%= balance %></span></p>
-    </div>
+      <p id="totalPrice">Total Price: £<span class="total-price"><%= balance%></span></p>
 
-    <div class="modal-footer">
-    <form>
-      <button data-name="fiver" class="voucher btn btn-success btn-xs">Add £5 discount</button>
-      <button data-name="tenner" class="voucher btn btn-success btn-xs">Add £10 discount</button>
-      <button data-name="fifteen" class="voucher btn btn-success btn-xs">Add £15 discount</button>
-      <p>Total Price: £<span class="total-price">0.00</span></p>
-    </form>
-    </div>
+    </aside>
+  </section>
 
-  </main>
+  <footer>
+
+  </footer>
 
   <% include footer.ejs %>
 
-<script>
-  $(document).ready(function(){
-    var products = JSON.parse($.cookie('cart'));
-    products.forEach(function(product){
-      $('ul').append('<li>' + product.name + ' Price: £' + product.price + '.00' + '</li>');
+  <script>
+    $(document).ready(function(){
+      var products = JSON.parse($.cookie('cart'));
+      products.forEach(function(product){
+        $('ul').append('<li id="' + product.name + '" class="col-md-5">' + '<span class="productName">' + product.name + '</span>' + '<img src="' + product.image_url + '">' + '<br>Price: £' + product.price + '.00' + '<button class="minus btn btn-success btn-xs">Remove</button>' + '</li>');
+      });
     });
-  });
-</script>
+  </script>
 
   </body>
 

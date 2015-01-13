@@ -19,8 +19,8 @@ app.get('/', function(request, response){
 
 app.post('/checkout', function(request, response){
   var balance = request.body.balance;
-  var contents = request.body.itemName;
-  response.render('checkout', {'balance': balance, 'contents': contents});
+  var categories = request.body.itemCategory;
+  response.render('checkout', {'balance': balance, 'categories': categories});
 });
 
 http.listen(8001, function(){

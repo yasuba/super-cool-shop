@@ -1,5 +1,11 @@
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 .container-fluid {
   padding: 0;
+  margin-bottom: 60px;
 }
 
 h1 {
@@ -20,7 +26,7 @@ a:hover {
 #price {
   border: none;
   background-color: #29A3A3;
-  width: 55px;
+  width: 65px;
   padding: 0;
 }
 
@@ -31,7 +37,7 @@ a:hover {
 
 #checkout {
   display: inline;
-  margin-left: 50%;
+  margin-left: 45%;
 }
 
 #checkoutButton {
@@ -61,29 +67,102 @@ h3 {
   padding: 8%;
 }
 
-.modal-header {
-  border-bottom: 1px solid #B2E0B2;
-}
-
-.modal-header, .modal-body {
-  background-color: #FFFFE7;
-}
-
-.modal-body {
-  padding: 15px 15px 30px;
-}
-
-.modal-body p {
+#checkoutTitle {
+  color: #fff;
   float: right;
+  margin: -70px 100px;
 }
 
-.modal-footer {
+.purchaseAndPricing {
+  padding: 15px 15px;
+  min-height: 100%;
+}
+
+.purchaseAndPricing h2 {
+  font-size: 1.5em;
+  margin: 20px 0 30px 50px;
+}
+
+.purchaseAndPricing img {
+  display: block;
+  margin: 12px 0 0 70px;
+}
+
+.purchaseAndPricing li {
+  list-style: none;
+  min-height: 230px;
+  border: 1px solid #4cae4c;
+  border-radius: 7px;
+  margin: 10px;
+}
+
+aside {
+  font-size: 1.25em;
+  padding-bottom: 30px;
+}
+
+.minus{
+  margin-left: 60px;
+}
+
+.offers {
+  margin-bottom: 20px;
+}
+
+.purchaseAndPricing h4 {
+  margin-top: 30px;
+}
+
+.purchaseAndPricing p {
+  display: inline-block;
+  margin-left: 160px;
+  margin-bottom: 40px;
+}
+
+#totalPrice {
+  display: none;
+  margin-left: 330px;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+#specialOffers {
+  margin: 20px 0 40px -30px;
+}
+
+#vouchers{
+  display: inline;
+}
+
+#specialOffers li {
+  min-height: 10px;
   background-color: #B2E0B2;
+  border: 1px solid #4cae4c;
+  border-radius: 7px;
+  padding: 10px;
+  margin: 10px 0 0 -10px;
+  width: 80%;
 }
 
-.modal-footer p {
-  padding-left: 20%;
-  color: #5cb85c;
+footer {
+  background-color: #B2E0B2;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+}
+
+footer p {
+  color: #fff;
+  float: right;
+  font-size: 1.5em;
+  margin-right: 100px;
+  text-shadow:
+  -1px -1px 0 #00933b;
+  1px -1px 0 #00933b;
+  -1px 1px 0 #00933b;
+  1px 1px 0 #00933b;
 }
 
 .error {

@@ -25,27 +25,43 @@ $.get('/javascript/data.json', function(data){
     }
     $('#item-count').html(cart.contents.length);
     $('#price').val(currencyFormat(cart.balance()));
-    var input = $('#itemName');
-    input.val( input.val() + ',' + stock[item].name );;
+    var input = $('#itemCategory');
+    input.val( input.val() + ',' + stock[item].category );;
   });
 
   $('.item .remove').on('click', function(event){
     event.preventDefault();
     var item = stock[this.parentNode.parentNode.getAttribute('data-name')];
+    console.log(item)
     cart.remove(item);
     $('#item-count').html(cart.contents.length);
     $('#price').val(currencyFormat(cart.balance()));
-    var input = $('#itemName');
-    input.val(input.val().replace(item.name, 'removed'));
+  });
+
+  $('.minus').on('click', function(event){
+    event.preventDefault();
+    var itemName = this.parentNode.getAttribute('id');
+    var products = JSON.parse($.cookie('cart'));
+    products.forEach(function(product){
+      if(product.name.indexOf(itemName) > -1) {
+      products.splice(products.indexOf(product), 1);
+      var balance = $('.balance').html();
+      var update = balance - product.price + '.00';
+      }
+      $('.balance').text(update);
+    });
   });
 
   $('.voucher').on('click', function(event){
+    event.preventDefault();
     var fullCart = JSON.parse($.cookie('cart'));
     fullCart.forEach(function(cartItem){
       cart.contents.push(cartItem);
     });
-    event.preventDefault();
-    try {cart.add(eval(this.getAttribute("data-name")));
+    var voucher = (eval(this.getAttribute("data-name")));
+    try {cart.add(voucher);
+    var balance = $('.balance').html() - .00;
+    $('.total-price').text(balance + voucher.price + '.00');
     }
     catch(err) {
       $('.error').show().delay(3000).queue(function(n) {
@@ -53,7 +69,7 @@ $.get('/javascript/data.json', function(data){
       });
       $('.error').html(err);
     }
-    $('.total-price').text(cart.balance())
+    $('#totalPrice').show();
   });
 
   $('.close').on('click', function() {
