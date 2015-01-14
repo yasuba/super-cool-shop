@@ -56,7 +56,7 @@ $.get('/javascript/data.json', function(data){
           $('#fifteen').hide();
           $('#tenner').show();
         }
-        else if(product.category.indexOf('footwear') > 0 && $('.balance').html() < 75.00) {
+        else if(product.category.indexOf('footwear') > -1 && $('.balance').html() < 75.00) {
           $('#fifteen').hide();
           $('#tenner').show();
         }
@@ -84,8 +84,6 @@ $.get('/javascript/data.json', function(data){
     });
     var voucher = (eval(this.getAttribute("data-name")));
     try {cart.add(voucher);
-      console.log(voucher.price)
-      console.log($('.balance').html())
       var voucherPrice = voucher.price + '.00';
       var balance = eval($('.balance').html() + voucherPrice);
       $('.total-price').text(currencyFormat(balance));
