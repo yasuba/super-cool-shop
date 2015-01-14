@@ -8,7 +8,7 @@
 
   <header>
     <% include header.ejs %>
-    <form id="checkout" method="post" action="/checkout">
+    <form class="col-md-4 col-md-offset-1" id="checkout" method="post" action="/checkout">
       <p id="cart-text">My Cart: <span id="item-count">0</span> items &pound;<input id="price" name="balance" value="0.00"></p>
       <input type="hidden" id="itemCategory" value="" name="itemCategory">
       <button class="btn btn-primary btn-s" id="checkoutButton">Shopping Bag</button>
@@ -36,6 +36,10 @@
   <% include footer.ejs %>
 
   </body>
+
+  <footer>
+    <p>Maya 2015</p>
+  </footer>
 
 </html>
 

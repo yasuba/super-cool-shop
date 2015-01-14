@@ -44,11 +44,35 @@ $.get('/javascript/data.json', function(data){
     var products = JSON.parse($.cookie('cart'));
     products.forEach(function(product){
       if(product.name.indexOf(itemName) > -1) {
-      products.splice(products.indexOf(product), 1);
-      var balance = $('.balance').html();
-      var update = balance - product.price + '.00';
+        products.splice(products.indexOf(product), 1);
+        var balance = $('.balance').html();
+        var update = currencyFormat(balance - product.price);
       }
       $('.balance').text(update);
+      $('#' + itemName).hide();
+      products.forEach(function(product){
+        // doesn't have shoes
+        if(product.category.indexOf('footwear') < 0 && $('.balance').html() > 50.00) {
+          $('#fifteen').hide();
+          $('#tenner').show();
+        }
+        else if(product.category.indexOf('footwear') > 0 && $('.balance').html() < 75.00) {
+          $('#fifteen').hide();
+          $('#tenner').show();
+        }
+      });
+      if($('.balance').html() < 50.00) {
+        $('#fifteen').hide();
+        $('#tenner').hide();
+        $('#fiver').show();
+      }
+      if($('.balance').html() < 10.00) {
+        $('#fifteen').hide();
+        $('#tenner').hide();
+        $('#fiver').hide();
+      }
+      $('#initialPrice').show();
+      $('#totalPrice').hide();
     });
   });
 
@@ -60,8 +84,11 @@ $.get('/javascript/data.json', function(data){
     });
     var voucher = (eval(this.getAttribute("data-name")));
     try {cart.add(voucher);
-    var balance = $('.balance').html() - .00;
-    $('.total-price').text(balance + voucher.price + '.00');
+      console.log(voucher.price)
+      console.log($('.balance').html())
+      var voucherPrice = voucher.price + '.00';
+      var balance = eval($('.balance').html() + voucherPrice);
+      $('.total-price').text(currencyFormat(balance));
     }
     catch(err) {
       $('.error').show().delay(3000).queue(function(n) {
@@ -69,6 +96,7 @@ $.get('/javascript/data.json', function(data){
       });
       $('.error').html(err);
     }
+    $('#initialPrice').hide();
     $('#totalPrice').show();
   });
 

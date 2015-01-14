@@ -19,8 +19,12 @@ a:hover {
 }
 
 #title {
-  padding: 3%;
+  padding: 2% 0 4%;
   background-color: #29A3A3;
+}
+
+#title a {
+  margin-left: 8.333%;
 }
 
 #price {
@@ -33,11 +37,6 @@ a:hover {
 #cart-text {
   color: #fff;
   font-size: 1.25em;
-}
-
-#checkout {
-  display: inline;
-  margin-left: 45%;
 }
 
 #checkoutButton {
@@ -70,7 +69,7 @@ h3 {
 #checkoutTitle {
   color: #fff;
   float: right;
-  margin: -70px 100px;
+  margin-top: -80px;
 }
 
 .purchaseAndPricing {
@@ -114,14 +113,19 @@ aside {
 }
 
 .purchaseAndPricing p {
-  display: inline-block;
-  margin-left: 160px;
-  margin-bottom: 40px;
+  float: right;
+  margin: 0 120px 40px 0;
 }
 
 #totalPrice {
   display: none;
-  margin-left: 330px;
+  margin: 0 120px;
+  font-weight: bold;
+  font-size: 1.25em;
+}
+
+#initialPrice {
+  margin: 0 120px;
   font-weight: bold;
   font-size: 1.25em;
 }
@@ -132,6 +136,10 @@ aside {
 
 #vouchers{
   display: inline;
+}
+
+#fiver, #tenner, #fifteen {
+  display: none;
 }
 
 #specialOffers li {
@@ -158,11 +166,6 @@ footer p {
   float: right;
   font-size: 1.5em;
   margin-right: 100px;
-  text-shadow:
-  -1px -1px 0 #00933b;
-  1px -1px 0 #00933b;
-  -1px 1px 0 #00933b;
-  1px 1px 0 #00933b;
 }
 
 .error {

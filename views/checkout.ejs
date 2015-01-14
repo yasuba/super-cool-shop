@@ -9,7 +9,7 @@
   <header>
     <% include header.ejs %>
     </section>
-    <h2 id="checkoutTitle">Shopping Bag</h2>
+    <h2 id="checkoutTitle" class="col-md-4 co-md-offset-1">Shopping Bag</h2>
   </header>
 
   <div class="error"></div>
@@ -30,37 +30,44 @@
       </ol>
 
       <form id="vouchers">
-      <% if(balance >= 10.00 && balance < 50.00) { %>
-        <button data-name="fiver" class="voucher btn btn-success btn-lg">Add £5 discount</button>
-      <% } %>
-      <% if(balance >= 50.00 && categories.indexOf('footwear') < 0) { %>
-        <button data-name="tenner" class="voucher btn btn-success btn-lg">Add £10 discount</button>
-        <% } else if(balance >= 50.00 && balance < 75.00) { %>
-          <button data-name="tenner" class="voucher btn btn-success btn-lg">Add £10 discount</button>
-        <% } %>
-      <% if(balance >= 75.00 && categories.indexOf('footwear') > 0) { %>
-        <button data-name="fifteen" class="voucher btn btn-success btn-lg">Add £15 discount</button>
-      <% } %>
+        <button id="fiver" data-name="fiver" class="voucher btn btn-success btn-lg">Add £5 discount</button>
+        <button id="tenner" data-name="tenner" class="voucher btn btn-success btn-lg">Add £10 discount</button>
+        <button id="fifteen" data-name="fifteen" class="voucher btn btn-success btn-lg">Add £15 discount</button>
       </form>
 
-      <p>Balance: £<span class="balance"><%= balance %></span></p>
-      <p id="totalPrice">Total Price: £<span class="total-price"><%= balance%></span></p>
+      <p id="initialPrice">Balance: £<span class="balance"><%= balance %></span></p>
+      <p id="totalPrice">Balance: £<span class="total-price"><%= balance%></span></p>
 
     </aside>
   </section>
 
   <footer>
-
+    <p>Maya 2015</p>
   </footer>
 
   <% include footer.ejs %>
 
   <script>
     $(document).ready(function(){
+      var categories = '<%= categories %>';
       var products = JSON.parse($.cookie('cart'));
       products.forEach(function(product){
-        $('ul').append('<li id="' + product.name + '" class="col-md-5">' + '<span class="productName">' + product.name + '</span>' + '<img src="' + product.image_url + '">' + '<br>Price: £' + product.price + '.00' + '<button class="minus btn btn-success btn-xs">Remove</button>' + '</li>');
+        var name = product.name.slice(0, product.name.indexOf(' ')).toString();
+        $('ul').append('<li id="' + name + '" class="col-md-5">' + '<span class="productName">' + product.name + '</span>' + '<img src="' + product.image_url + '">' + '<br>Price: £' + product.price + '<button class="minus btn btn-success btn-xs">Remove</button>' + '</li>');
       });
+      var balance = $('.balance').html();
+      if(balance >= 10.00 && balance < 50.00) {
+        $('#fiver').show();
+      }
+      if(balance >= 50.00 && balance < 75.00) {
+        $('#tenner').show();
+      }
+      if(balance >= 75.00 && categories.indexOf('footwear') < 0) {
+        $('#tenner').show();
+      }
+      if(balance >= 75.00 && categories.indexOf('footwear') > 0) {
+        $('#fifteen').show();
+      }
     });
   </script>
 
