@@ -53,7 +53,7 @@
       var products = JSON.parse($.cookie('cart'));
       products.forEach(function(product){
         var name = product.name.slice(0, product.name.indexOf(' ')).toString();
-        $('ul').append('<li id="' + name + '" class="col-md-5">' + '<span class="productName">' + product.name + '</span>' + '<img src="' + product.image_url + '">' + '<br>Price: £' + product.price + '<button class="minus btn btn-success btn-xs">Remove</button>' + '</li>');
+        $('ul').append('<li id="' + name + '" class="col-md-5">' + '<span class="productName">' + product.name + '</span>' + '<img src="' + product.image_url + '">' + '<br>Price: £' + currencyFormat(product.price) + '<button class="minus btn btn-success btn-xs">Remove</button>' + '</li>');
       });
       var balance = $('.balance').html();
       if(balance >= 10.00 && balance < 50.00) {
