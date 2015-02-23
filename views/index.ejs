@@ -21,7 +21,7 @@
     <div class="error"></div>
     <% result.forEach(function(item) { %>
     <section  data-name="<%= item[0] %>" class="col-xs-6 col-md-4 item">
-  <h3><%= item[1].name %></h3><img src="<%= item[1].image_url %>">
+  <h3><%= item[1].name %></h3><a href="/products/<%= item[0] %>"><img src="<%= item[1].image_url %>"></a>
   <p>Price: £<%= item[1].price %></p>
   </form>
   <form class="buying">

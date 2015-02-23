@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <% include head.ejs %>
+  </head>
+
+  <body class="container-fluid">
+
+  <header>
+    <% include header.ejs %>
+  </header>
+
+  <section>
+  <h2><%= item.name %></h2>
+  <img src="<%= item.image_url%>" width="200">
+  <%= item.category %>
+  <p>Price: £<%= item.price %></p>
+  </section>
+
+  <% include footer.ejs %>
+
+</body>
+</html>

@@ -17,6 +17,12 @@ app.get('/', function(request, response){
   response.render('index', {result: result});
 });
 
+app.get('/products/:item', function(request, response){
+  var params = request.params.item;
+  var item = data[params];
+  response.render('products', {'item': item});
+})
+
 app.post('/checkout', function(request, response){
   var balance = request.body.balance;
   var categories = request.body.itemCategory;
