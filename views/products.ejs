@@ -10,14 +10,24 @@
     <% include header.ejs %>
   </header>
 
-  <section>
+  <section class="col-md-10 col-md-offset-1">
   <h2><%= item.name %></h2>
-  <img src="<%= item.image_url%>" width="200">
-  <%= item.category %>
-  <p>Price: £<%= item.price %></p>
+  <p class="productDesc"><%= item.category %></p>
+  <article class="col-md-5">
+    <img src="<%= item.image_url%>" width="200">
+    </article>
+    <article class="col-md-7">
+      <p>McSweeney's bespoke Echo Park post-ironic church-key butcher. Lumbersexual sriracha asymmetrical, mixtape four dollar toast pork belly put a bird on it 90's brunch mlkshk Pinterest umami sartorial chambray biodiesel. Lumbersexual umami banh mi cardigan, yr ethical pickled try-hard Shoreditch gentrify chillwave literally Neutra Odd Future ugh. Cold-pressed tattooed disrupt jean shorts, bespoke food truck Intelligentsia Shoreditch normcore distillery listicle fixie put a bird on it Helvetica master cleanse. Farm-to-table plaid Kickstarter mumblecore. Ethical retro cred, vinyl skateboard butcher quinoa fixie. Locavore Schlitz Thundercats, hella stumptown quinoa lomo retro banjo cold-pressed literally polaroid bicycle rights cred.</p>
+      <p class="prodPrice">Price: £<%= item.price %></p>
+    </article>
   </section>
 
   <% include footer.ejs %>
 
-</body>
+  </body>
+
+  <footer>
+    <p>Maya 2015</p>
+  </footer>
+
 </html>

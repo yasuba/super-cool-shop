@@ -66,6 +66,18 @@ h3 {
   padding: 8%;
 }
 
+.productDesc {
+  display: block;
+  padding-bottom: 3%;
+}
+
+.prodPrice {
+  display: block;
+  margin-top: 3%;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
 #checkoutTitle {
   color: #fff;
   float: right;
